@@ -16,6 +16,7 @@ const port = process.env.PORT;
 
 // Import routes
 import signupRoute from "./routes/signupRoute.js";
+import loginRoute from "./routes/loginRoute.js";
 
 // Middleware
 app.use(express.json());
@@ -24,6 +25,7 @@ app.use(morgan("dev"));
 
 // Use Routes
 app.use("/api/signup", signupRoute);
+app.use("/api/login", loginRoute);
 
 const startServer = async () => {
   try {

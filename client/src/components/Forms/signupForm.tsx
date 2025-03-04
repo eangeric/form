@@ -55,10 +55,10 @@ export default function SignUpForm() {
         setMessage(data.message);
       } else {
         setSuccess(true);
-        setMessage("Signup successful! Redirecting...");
+        setMessage("Signup successful! Redirecting to login...");
         setTimeout(() => {
-          navigate("/");
-        }, 3000);
+          navigate("/login");
+        }, 2000);
       }
     } catch (error) {
       console.log(error);
