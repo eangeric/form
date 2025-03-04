@@ -1,5 +1,7 @@
+import e from "express";
 import { User } from "../database/models/user.js";
 import bcrypt from "bcryptjs";
+
 // Add a new user
 export const authUser = async (req, res) => {
   try {
@@ -25,6 +27,14 @@ export const authUser = async (req, res) => {
         status: "failed",
         message: "Invalid email or password",
       });
+    }
+
+    if (req.session.user) {
+    } else {
+      req.session.user = {
+        email: user.email,
+        auth: true,
+      };
     }
 
     res.json({ status: "success", user });

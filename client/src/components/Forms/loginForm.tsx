@@ -44,6 +44,7 @@ export default function LoginForm() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(values),
+        credentials: "include",
       });
 
       if (!response.ok) {
@@ -57,7 +58,7 @@ export default function LoginForm() {
         setSuccess(true);
         setMessage("Login successful! Redirecting to home...");
         setTimeout(() => {
-          navigate("/");
+          navigate("/", { replace: true });
         }, 2000);
       }
     } catch (error) {
@@ -119,7 +120,9 @@ export default function LoginForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit" className="cursor-pointer">
+              Submit
+            </Button>
           </form>
         </Form>
         <p className="text-center">

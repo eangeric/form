@@ -119,7 +119,9 @@ export default function SignUpForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit" className="cursor-pointer">
+              Submit
+            </Button>
           </form>
         </Form>
         <p className="text-center">
