@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { replace, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
   const handleLogout = async () => {
-    const response = await fetch("http://localhost:4000/api/auth", {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND}/api/auth`, {
       method: "DELETE",
       credentials: "include",
     });

@@ -5,7 +5,7 @@ export const PrivateRoute = () => {
   const [auth, setAuth] = useState<boolean | null>(null);
   useEffect(() => {
     const getAuth = async () => {
-      const response = await fetch("http://localhost:4000/api/auth", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND}/api/auth`, {
         credentials: "include",
       });
       const data = await response.json();
